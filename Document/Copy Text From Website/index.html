@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Copy Text From Website </title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            *{
+                background-color: aquamarine;
+                font-size:50px;
+                align-items:center;
+                text-align:left;
+            }
+            #copy-text{
+                margin:10vh;
+            }
+            #copy-heading{
+                margin:10vh;
+                text-decoration:underline;
+                text-transform:capitalize;
+            }
+            #copy-button{
+                color:white;
+                background-color: rgb(39, 39, 39);
+                margin:10vh;
+                display:flex;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="copy-heading">Click on copy button to copy text:-</h2>
+        <p id="copy-text" contenteditable="true">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper condimentum est, id eleifend mauris interdum sit amet. Suspendisse elementum varius metus, et lacinia dolor bibendum eu. Suspendisse id risus semper, fermentum dolor vitae, ullamcorper risus. Suspendisse sit amet quam elit. Integer quis elit urna. Aenean feugiat suscipit cursus. Vestibulum id nisi at nulla pretium pulvinar interdum non nulla. Fusce a mauris nisl.
+        </p>
+        <button id="copy-button" onclick="copyText()">Copy</button>
+        <script>
+            let txt = document.getElementById("copy-text").textContent;
+            function copyText(){
+                navigator.clipboard.writeText(txt);
+                alert("Text Copied!");
+            }
+        </script>
+    </body>
+</html>

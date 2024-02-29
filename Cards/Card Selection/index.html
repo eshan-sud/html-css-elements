@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Card Selection</title>
+        <style>
+            html{
+                height:100vh;
+            }
+            body{
+                display:flex;
+                flex-direction:row;
+                align-items:center;
+                justify-content:center;
+                height:100%;
+                background:#091540;
+                gap:20px;
+            }
+            .photos{
+                width:150px;
+                height:150px;
+                border-radius:5px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                overflow:hidden;
+                transition:0.5s;
+            }
+            .photos:hover{
+                transform:scale(1.1);
+                cursor:pointer;
+            }
+            .photos:not(:hover){
+                filter:grayscale(100%);
+            }
+            .photos img{
+                width:100%;
+                height:100%;
+                object-fit:cover;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="photos"><img alt="pic1" src="sample_pic1.jpg"></div>
+        <div class="photos"><img alt="pic2" src="sample_pic2.jpg"></div>
+        <div class="photos"><img alt="pic3" src="sample_pic3.jpg"></div>
+    </body>
+</html>

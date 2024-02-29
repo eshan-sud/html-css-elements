@@ -5,34 +5,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NavBars</title>
         <style>
-
+            body{
+                background-color:#333;
+                margin:0px;
+            }
+            nav{
+                height:70px;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                box-shadow: 0 2px 5px rgba(0,0,0,0,0.3);
+            }
+            nav ul{
+                display:flex;
+                margin:0;
+                padding:0;
+            }
+            nav a{
+                text-decoration:none;
+                font-size:18px;
+                color:white;
+                font-weight:bold;
+                padding:10px;
+            }
+            nav li{position:relative;}
+            
         </style>
-
     </head>
     <body>
         <div>
             <nav id="navbar-1">
-                <a href="" target="_blank">Home</a>
-                <a href="" target="_blank">About</a>
-                <a href="" target="_blank">Expore</a>
-                <a href="" target="_blank">Profile</a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li class="notifications-diaglog">
+                        <a href="#">Explore</a>
+                        <div class="notification-menu">
+                            <ul>
+                                <li>All</li>
+                                <li>Global</li>
+                                <li>Private</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Expore</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
             </nav>
         </div>
-        <div>
-            <nav id="navbar-2">
-                <a href="" target="_blank">Home</a>
-                <a href="" target="_blank">About</a>
-                <a href="" target="_blank">Expore</a>
-                <a href="" target="_blank">Profile</a>
-            </nav>
-        </div>
-        <div>
-            <nav id="navbar-3">
-                <a href="" target="_blank">Home</a>
-                <a href="" target="_blank">About</a>
-                <a href="" target="_blank">Expore</a>
-                <a href="" target="_blank">Profile</a>
-            </nav>
         </div>
     </body>
 </html>

@@ -5,41 +5,51 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NavBars</title>
         <style>
-            body{
-                background-color:#333;
-                margin:0px;
-            }
-            nav{
-                height:70px;
-                display:flex;
-                justify-content:center;
-                align-items:center;
+            #navbar-1{
+                background-color: #333;
+                margin: 0px;
+                font-family: Arial, Helvetica, sans-serif;
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 box-shadow: 0 2px 5px rgba(0,0,0,0,0.3);
             }
-            nav ul{
-                display:flex;
-                margin:0;
-                padding:0;
+            #navbar-1 ul{
+                display: flex;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
             }
-            nav a{
-                text-decoration:none;
-                font-size:18px;
-                color:white;
-                font-weight:bold;
-                padding:10px;
+            #navbar-1 a{
+                text-decoration: none;
+                font-size: 18px;
+                color: white;
+                font-weight: bold;
+                padding: 10px;
             }
-            nav li{position:relative;}
-            
+            #notifications-dialog ul{
+                position: absolute;
+                background-color: white;
+                flex-direction: column;
+                margin: 10px;
+            }
+            #notifications-menu li:hover{
+                background: purple;
+                color: white;
+                width: 100%;
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
         <div>
             <nav id="navbar-1">
-                <ul class="nav-links">
+                <ul id="nav-links">
                     <li><a href="#">Home</a></li>
-                    <li class="notifications-diaglog">
+                    <li id="notifications-dialog">
                         <a href="#">Explore</a>
-                        <div class="notification-menu">
+                        <div id="notifications-menu">
                             <ul>
                                 <li>All</li>
                                 <li>Global</li>
@@ -52,6 +62,10 @@
                 </ul>
             </nav>
         </div>
+        <div>
+            <nav id="navbar-2">
+
+            </nav>
         </div>
     </body>
 </html>

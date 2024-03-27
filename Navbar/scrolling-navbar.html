@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrolling Navbar</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .navbar {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      transition: top 0.3s;
+    }
+    .content {
+      margin-top: 50px;
+      height: 2000px;
+    }
+  </style>
+  <script>
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-50px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+
+  </script>
+</head>
+<body>
+  <div class="navbar" id="navbar">
+    <!-- Your navigation links here -->
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+  <!-- Add some content to scroll through -->
+  <div class="content">
+    <!-- Your content here -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero in risus convallis fringilla. Phasellus nec consectetur lacus, nec aliquam nunc.</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reveal on Scroll</title>
+    <style>
+        :root{--back-color: rgb(40, 180, 215);}
+        html, body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        section{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        section:not(#second-container, #header){
+            background-color: var(--back-color);
+        }
+        .cards{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            padding: 10px;
+        }
+        .reveal{
+            position: relative;
+            transform: translateY(150px);
+            opacity: 0;
+            transition: all 2s ease;
+        }
+        .reveal.active{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        Reveals Items on Scroll
+    </section>
+    <section>
+        <div class="reveal">
+            <h2>Content Title</h2>
+            <div class="cards">
+                <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit ipsum neque, vel luctus urna molestie vitae. Donec rhoncus felis ac ante euismod, cursus molestie nisi posuere. </p></div>
+                <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit ipsum neque, vel luctus urna molestie vitae. Donec rhoncus felis ac ante euismod, cursus molestie nisi posuere. </p></div>
+                <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit ipsum neque, vel luctus urna molestie vitae. Donec rhoncus felis ac ante euismod, cursus molestie nisi posuere. </p></div>                
+            </div>
+        </div>
+    </section>
+    <section id="second-container">
+        <div class="reveal">
+            <h2>Content Title</h2>
+            <div class="cards">
+                <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit ipsum neque, vel luctus urna molestie vitae. Donec rhoncus felis ac ante euismod, cursus molestie nisi posuere. </p></div>
+                <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit ipsum neque, vel luctus urna molestie vitae. Donec rhoncus felis ac ante euismod, cursus molestie nisi posuere. </p></div>
+                <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit ipsum neque, vel luctus urna molestie vitae. Donec rhoncus felis ac ante euismod, cursus molestie nisi posuere. </p></div>                
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="reveal">
+            <h2>Content Title</h2>
+            <div class="cards">
+                <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit ipsum neque, vel luctus urna molestie vitae. Donec rhoncus felis ac ante euismod, cursus molestie nisi posuere. </p></div>
+                <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit ipsum neque, vel luctus urna molestie vitae. Donec rhoncus felis ac ante euismod, cursus molestie nisi posuere. </p></div>
+                <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit ipsum neque, vel luctus urna molestie vitae. Donec rhoncus felis ac ante euismod, cursus molestie nisi posuere. </p></div>                
+            </div>
+        </div>
+    </section>   
+    <script>
+        window.addEventListener("scroll", reveal);
+        function reveal(){
+        var reveals = document.querySelectorAll(".reveal");
+        var revealPoint = 200;
+        for(var i=0; i<reveals.length; i++){
+            var windowHeight = window.innerHeight;
+            var revealTop = reveals[i].getBoundingClientRect().top;
+            if (revealTop < windowHeight - revealPoint){reveals[i].classList.add("active");}
+            else{reveals[i].classList.remove("active");}
+        }
+    }
+    </script>
+</body>
+</html>
